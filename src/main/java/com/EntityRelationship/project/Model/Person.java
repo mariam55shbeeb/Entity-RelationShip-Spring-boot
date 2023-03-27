@@ -41,7 +41,7 @@ public class Person {
 	@NotBlank
 	String name;
 	
-	@Email(regexp = "[a-z0-9._%+-]+@[A-Za-z0-9.-]+\\.[A-za-z]{2,3}")
+	@Email(regexp = "[a-z0-9._%+-]+@[A-Za-z0-9.-]+\\.[A-za-z]{2,3}",message = "The email '${validatedValue}' is not a valid email address ")
     String email; 
 	
 	

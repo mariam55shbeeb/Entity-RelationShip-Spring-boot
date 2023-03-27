@@ -4,6 +4,7 @@ import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
+import org.springframework.stereotype.Service;
 
 import com.EntityRelationship.project.Model.Car;
 import com.EntityRelationship.project.Model.Company;
@@ -11,6 +12,7 @@ import com.EntityRelationship.project.Model.Person;
 import com.EntityRelationship.project.Repository.CompanyRepository;
 import com.EntityRelationship.project.Repository.PersonRepository;
 
+@Service
 public class CompanyService {
 
 	@Autowired

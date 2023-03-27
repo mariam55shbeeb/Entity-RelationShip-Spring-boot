@@ -24,45 +24,28 @@ import jakarta.validation.Valid;
 @RestController
 public class PersonController {
 
-	
 	@Autowired
 	PersonService ps;
-	
-	
-	
-	
+	@Autowired
+	RoleService rs;
+
 	@GetMapping("/persons/{personid}")
-	ResponseEntity<Person> getPerson(@Valid @PathVariable int personid ) throws Exception {
+	ResponseEntity<Person> getPerson(@Valid @PathVariable int personid) throws Exception {
 		return ps.getPerson(personid);
 	}
-	
-	
-	
+
 	@PostMapping("/persons")
 	ResponseEntity<Person> newPerson(@Valid @RequestBody Person p) {
 		return ps.newPerson(p);
 	}
-	
-	
-	
+
 	@PutMapping("/persons/{id}")
-	public ResponseEntity<Person> update(@PathVariable int id,@Valid @RequestBody Person p)throws Exception{
+	public ResponseEntity<Person> update(@PathVariable int id, @Valid @RequestBody Person p) throws Exception {
 		return ps.updateInfo(id, p);
 	}
-	
-	
-	
-	
-	
-	
-	
-	
-	
-		}
-	
-	
-	
-	
-	
-	
+	@PutMapping("/persons/{personId}/role")
+	ResponseEntity<Role> newRole(@PathVariable int personId, @RequestBody Role r) {
+		return rs.assignNewRoleToPerson(r,personId);
 
+}
+	}

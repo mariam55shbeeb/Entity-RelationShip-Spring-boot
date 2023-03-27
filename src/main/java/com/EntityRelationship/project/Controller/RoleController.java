@@ -20,23 +20,21 @@ public class RoleController {
 
 	@Autowired
 	RoleService rs;
-	
-	@GetMapping("/role/{id}")
-		ResponseEntity<Role> getrole(@PathVariable int id) {
-	     return rs.getRole(id);
+
+	@GetMapping("/roles/{id}")
+	ResponseEntity<Role> getrole(@PathVariable int id) {
+		return rs.getRole(id);
 	}
-	
-	@PostMapping("/persons/{personId}/role")
-	 ResponseEntity<Role> newRole(@PathVariable int personId,@RequestBody Role r) {
-		return rs.newRole(r,personId);
+
+	@PostMapping("/roles")
+	ResponseEntity<Role> newRole( @RequestBody Role r) {
+		return rs.newRole(r);
 	}
+
+	/*@PutMapping("/role/{roleId}")
+	ResponseEntity<Role> editRole(@PathVariable int roleId, @RequestBody Role r) {
+		return rs.updateRole(r, roleId);*/
+
 	
-	@PutMapping("/role/{roleId}")
-	ResponseEntity<Role> editRole(@PathVariable int roleId,@RequestBody Role r){
-		return rs.updateRole(r,roleId);
-		
-	}
-	
-	
-	
+
 }

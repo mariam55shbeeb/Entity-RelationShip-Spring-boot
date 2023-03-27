@@ -22,7 +22,7 @@ public class CompanyController {
 	}
 
 	
-	@PostMapping("companies")
+	@PostMapping("/companies")
 	ResponseEntity<Company> NewCompany(@RequestBody Company com){
 		return cs.NewCompany(com);
 	}

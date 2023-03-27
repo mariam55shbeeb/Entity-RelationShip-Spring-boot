@@ -27,14 +27,12 @@ public class RoleController {
 	}
 
 	@PostMapping("/roles")
-	ResponseEntity<Role> newRole( @RequestBody Role r) {
+	ResponseEntity<Role> newRole(@RequestBody Role r) {
 		return rs.newRole(r);
 	}
 
-	/*@PutMapping("/role/{roleId}")
+	@PutMapping("/role/{roleId}")
 	ResponseEntity<Role> editRole(@PathVariable int roleId, @RequestBody Role r) {
-		return rs.updateRole(r, roleId);*/
-
-	
-
+		return rs.updateRole(roleId, r);
+	}
 }

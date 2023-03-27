@@ -45,7 +45,7 @@ public class Person {
     String email; 
 	
 	
-	@JsonBackReference(value = "person_role")
+	@JsonBackReference(value = "Person_role")
 	@OneToOne(cascade = CascadeType.ALL,targetEntity = Role.class)
 	Role role;
 	
@@ -54,7 +54,7 @@ public class Person {
 	List<Car> cars;
 	
 
-	@JsonIgnoreProperties("persons")	
+	@JsonIgnoreProperties("Persons")	
 	@ManyToMany(cascade = CascadeType.ALL)
 	List<Company> companies;
 	

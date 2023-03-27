@@ -27,6 +27,7 @@ public class CompanyService {
 			p.get().getCompanies().add(com);
 			com.getPersons().add(p.get());
 			person_transaction.save(p.get());
+			
 			return ResponseEntity.ok().body(com);	
 		}
 		
